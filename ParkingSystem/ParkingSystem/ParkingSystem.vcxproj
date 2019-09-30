@@ -185,6 +185,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\pdflib.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="ParkingSystem.h" />
     <ClInclude Include="ParkingSystemDoc.h" />
@@ -219,4 +220,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="ParkingSystem.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

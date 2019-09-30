@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="PDF相关">
+      <UniqueIdentifier>{36036a54-e8ed-410e-86eb-f1e4118be2ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -38,6 +41,9 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\pdflib.h">
+      <Filter>PDF相关</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
