@@ -45,6 +45,9 @@
     <ClInclude Include="..\include\pdflib.h">
       <Filter>PDF相关</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\pdflib.hpp">
+      <Filter>PDF相关</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ParkingSystem.cpp">
