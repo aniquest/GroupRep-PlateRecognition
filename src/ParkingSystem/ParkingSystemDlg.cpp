@@ -259,8 +259,10 @@ void CParkingSystemDlg::OnBnClickedOutputToPdfBtn()
 
 		p.close_image(image);
 		p.end_document(L"");
-	}
 
+
+		MessageBox(L"成功", L"成功导出数据到pdf文件", NULL);
+	}
 	catch (PDFlib::Exception &ex)
 	{
 		//wcerr << L"PDFlib exception occurred:" << endl
