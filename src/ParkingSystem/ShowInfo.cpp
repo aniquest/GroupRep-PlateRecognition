@@ -88,7 +88,6 @@ void CShowInfo::OnBnClickedOk()
 		}
 	}
 	std::wstring stemp;
-	//LPCWSTR result = stemp.c_str();
 	//ͼƬһ
 	CImage  image;
 	int cx, cy;
