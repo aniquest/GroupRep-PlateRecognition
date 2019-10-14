@@ -6,7 +6,7 @@
 #include "ParkingSystem.h"
 #include "ParkingSystemDlg.h"
 #include "afxdialogex.h"
-
+#include "ShowInfo.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -67,6 +67,7 @@ BEGIN_MESSAGE_MAP(CParkingSystemDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CParkingSystemDlg::OnBnClickedOutputToPdfBtn)
+	ON_BN_CLICKED(IDC_BUTTON2, &CParkingSystemDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -280,4 +281,13 @@ void CParkingSystemDlg::OnBnClickedOutputToPdfBtn()
 		//cerr << "Generic C++ exception occurred!" << endl;
 		return;
 	}
+}
+
+
+void CParkingSystemDlg::OnBnClickedButton2()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	CShowInfo  *pDlg = new CShowInfo;
+	pDlg->Create(IDD_Show_Dio, this);
+	pDlg->ShowWindow(SW_SHOW);
 }
