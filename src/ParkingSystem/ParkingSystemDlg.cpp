@@ -60,6 +60,8 @@ CParkingSystemDlg::CParkingSystemDlg(CWnd* pParent /*=NULL*/)
 void CParkingSystemDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_DATETIMEPICKER_START, m_Data_Start);
+	DDX_Control(pDX, IDC_DATETIMEPICKER_END, m_Data_End);
 }
 
 BEGIN_MESSAGE_MAP(CParkingSystemDlg, CDialogEx)
@@ -67,6 +69,8 @@ BEGIN_MESSAGE_MAP(CParkingSystemDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CParkingSystemDlg::OnBnClickedOutputToPdfBtn)
+	ON_BN_CLICKED(IDC_BUTTON_CARNUM, &CParkingSystemDlg::OnBnClickedButtonCarnum)
+	ON_BN_CLICKED(IDC_BUTTON_CARMONEY, &CParkingSystemDlg::OnBnClickedButtonCarmoney)
 END_MESSAGE_MAP()
 
 
@@ -77,6 +81,8 @@ BOOL CParkingSystemDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// 将“关于...”菜单项添加到系统菜单中。
+
+	
 
 	// IDM_ABOUTBOX 必须在系统命令范围内。
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
@@ -278,4 +284,66 @@ void CParkingSystemDlg::OnBnClickedOutputToPdfBtn()
 		//cerr << "Generic C++ exception occurred!" << endl;
 		return;
 	}
+}
+
+
+
+
+//查询停车数量
+void CParkingSystemDlg::OnBnClickedButtonCarnum()
+{
+	// TODO: 在此添加控件通知处理程序代码
+
+	//获得停车进出时间
+	CTime m_DateStart;
+	m_Data_Start.GetTime(m_DateStart);
+	int year = m_DateStart.GetYear();
+	int month = m_DateStart.GetMonth();
+	int day = m_DateStart.GetDay();
+
+	CTime m_DateEnd;
+	m_Data_End.GetTime(m_DateEnd);
+	int year2 = m_DateEnd.GetYear();
+	int month2 = m_DateEnd.GetMonth();
+	int day2 = m_DateEnd.GetDay();
+
+	char* result = 0;
+
+	CarNumQuery(year, month, day, year2, month2, day2, result);
+
+	int num = MultiByteToWideChar(0, 0, result, -1, NULL, 0);
+	wchar_t *wide = new wchar_t[num];
+	MultiByteToWideChar(0, 0, result, -1, wide, num);
+
+	GetDlgItem(IDC_EDIT_CARNUM)->SetWindowText(wide);
+	UpdateData(FALSE);
+}
+
+//查询停车费用
+void CParkingSystemDlg::OnBnClickedButtonCarmoney()
+{
+	// TODO: 在此添加控件通知处理程序代码
+
+	CTime m_DateStart;
+	m_Data_Start.GetTime(m_DateStart);
+	int year = m_DateStart.GetYear();
+	int month = m_DateStart.GetMonth();
+	int day = m_DateStart.GetDay();
+
+	CTime m_DateEnd;
+	m_Data_End.GetTime(m_DateEnd);
+	int year2 = m_DateEnd.GetYear();
+	int month2 = m_DateEnd.GetMonth();
+	int day2 = m_DateEnd.GetDay();
+
+	char* result = 0;
+
+	CarMoneyQuery(year, month, day, year2, month2, day2, result);
+
+	int num = MultiByteToWideChar(0, 0, result, -1, NULL, 0);
+	wchar_t *wide = new wchar_t[num];
+	MultiByteToWideChar(0, 0, result, -1, wide, num);
+
+	GetDlgItem(IDC_EDIT_CARMONEY)->SetWindowText(wide);
+	UpdateData(FALSE);
 }
