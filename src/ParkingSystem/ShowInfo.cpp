@@ -147,7 +147,7 @@ void CShowInfo::OnBnClickedOk()
 	stemp = StoWs(t2);
 	str = stemp.c_str();
 	GetDlgItem(IDC_OUTTIME)->SetWindowText(str);
-	stemp = StoWs(t2);
+	stemp = StoWs(m);
 	str = stemp.c_str();
 	GetDlgItem(IDC_TOTAL)->SetWindowText(str);
 	mysql_close(&local_mysql);

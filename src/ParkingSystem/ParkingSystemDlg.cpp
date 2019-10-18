@@ -351,7 +351,7 @@ void CParkingSystemDlg::OnBnClickedButtonCarmoney()
 	UpdateData(FALSE);
 }
 
-
+//显示
 void CParkingSystemDlg::OnBnClickedButton2()
 {
 	// TODO: 在此添加控件通知处理程序代码
