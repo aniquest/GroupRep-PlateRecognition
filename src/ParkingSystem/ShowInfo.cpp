@@ -80,11 +80,11 @@ void CShowInfo::OnBnClickedOk()
 		while (row = mysql_fetch_row(result))
 		{
 			//处理逐行结果   
-			p1 = row[6];
-			p2 = row[7];
+			p1 = row[5];
+			p2 = row[6];
 			t1 = row[2];
 			t2 = row[3];
-			m  = row[5];
+			m  = row[4];
 		}
 	}
 	std::wstring stemp;
