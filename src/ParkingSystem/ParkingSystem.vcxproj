@@ -201,6 +201,7 @@
   <ItemGroup>
     <ClInclude Include="..\include\pdflib.h" />
     <ClInclude Include="..\include\pdflib.hpp" />
+    <ClInclude Include="CPictureEx.h" />
     <ClInclude Include="DataBase.h" />
     <ClInclude Include="ParkingSystem.h" />
     <ClInclude Include="ParkingSystemDlg.h" />
@@ -210,6 +211,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CPictureEx.cpp" />
     <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="ParkingSystem.cpp" />
     <ClCompile Include="ParkingSystemDlg.cpp" />
@@ -228,6 +230,8 @@
     <None Include="res\ParkingSystem.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\1.gif" />
+    <Image Include="res\3.gif" />
     <Image Include="res\ParkingSystem.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

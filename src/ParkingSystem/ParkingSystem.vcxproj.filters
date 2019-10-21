@@ -51,6 +51,9 @@
     <ClInclude Include="DataBase.h">
       <Filter>数据库查询</Filter>
     </ClInclude>
+    <ClInclude Include="CPictureEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ParkingSystem.cpp">
@@ -68,6 +71,9 @@
     <ClCompile Include="DataBase.cpp">
       <Filter>数据库查询</Filter>
     </ClCompile>
+    <ClCompile Include="CPictureEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ParkingSystem.rc">
@@ -81,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\ParkingSystem.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\1.gif">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\3.gif">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

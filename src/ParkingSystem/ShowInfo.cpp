@@ -6,7 +6,7 @@
 #include "ShowInfo.h"
 #include "afxdialogex.h"
 #include <string>
-
+#include "ParkingSystemDlg.h"
 // CShowInfo 对话框
 
 IMPLEMENT_DYNAMIC(CShowInfo, CDialogEx)
@@ -24,11 +24,15 @@ CShowInfo::~CShowInfo()
 void CShowInfo::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_GIF1, gif1);
+	DDX_Control(pDX, IDC_GIF2, gif2);
 }
 
 
 BEGIN_MESSAGE_MAP(CShowInfo, CDialogEx)
 	ON_BN_CLICKED(IDOK, &CShowInfo::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_UP, &CShowInfo::OnBnClickedUp)
+	ON_BN_CLICKED(IDC_DOWN, &CShowInfo::OnBnClickedDown)
 END_MESSAGE_MAP()
 
 
@@ -70,6 +74,8 @@ void CShowInfo::OnBnClickedOk()
 
 	//将要执行的SQL语句放入数组中
 	int id=1;
+	CParkingSystemDlg *parent =(CParkingSystemDlg *)GetParent();
+	id = parent->id;
 	sprintf_s(sql_select, "SELECT *FROM car_info WHERE CarID='%d';", id);
 	std::string p1,p2,t1,t2,m,n;
 	//执行语句
@@ -155,4 +161,23 @@ void CShowInfo::OnBnClickedOk()
 	str = stemp.c_str();
 	GetDlgItem(IDC_TYPE)->SetWindowText(str);
 	mysql_close(&local_mysql);
+}
+
+
+void CShowInfo::OnBnClickedUp()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	if (gif1.Load(MAKEINTRESOURCE(IDR_GIF1), _T("gif")))
+		gif1.Draw();
+	//Sleep(1000);
+	//gif1.Stop();
+}
+
+
+void CShowInfo::OnBnClickedDown()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	if (gif2.Load(MAKEINTRESOURCE(IDR_GIF2), _T("gif")))
+		gif2.Draw();
+
 }

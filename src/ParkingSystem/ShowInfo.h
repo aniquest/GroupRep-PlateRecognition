@@ -4,6 +4,8 @@
 #include <opencv2/highgui/highgui_c.h>
 #include<opencv2\opencv.hpp>
 #include<mysql.h>
+#include "afxwin.h"
+#include "CPictureEx.h"
 using namespace cv;
 
 // CShowInfo ¶Ô»°¿ò
@@ -27,4 +29,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedOk();
+	CPictureEx gif1;
+	CPictureEx gif2;
+	afx_msg void OnBnClickedUp();
+	afx_msg void OnBnClickedDown();
 };

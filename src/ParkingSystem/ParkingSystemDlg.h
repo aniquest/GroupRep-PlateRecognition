@@ -34,11 +34,9 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnBnClickedOutputToPdfBtn();
 	afx_msg void OnBnClickedButton2();
-	afx_msg void OnBnClickedButtonCarnum();
-	afx_msg void OnBnClickedButtonCarmoney();
-	CDateTimeCtrl m_Data_Start;
-	CDateTimeCtrl m_Data_End;
-	
+	//CDateTimeCtrl m_Data_Start;
+	//CDateTimeCtrl m_Data_End;	
+public:
+	int id = 1;
 };
