@@ -71,7 +71,7 @@ void CShowInfo::OnBnClickedOk()
 	//将要执行的SQL语句放入数组中
 	int id=1;
 	sprintf_s(sql_select, "SELECT *FROM car_info WHERE CarID='%d';", id);
-	std::string p1,p2,t1,t2,m;
+	std::string p1,p2,t1,t2,m,n;
 	//执行语句
 	if (mysql_query(&local_mysql, sql_select) == 0)//执行查询语句成功！
 	{
@@ -85,6 +85,7 @@ void CShowInfo::OnBnClickedOk()
 			t1 = row[2];
 			t2 = row[3];
 			m  = row[4];
+			n = row[7];
 		}
 	}
 	std::wstring stemp;
@@ -150,5 +151,8 @@ void CShowInfo::OnBnClickedOk()
 	stemp = StoWs(m);
 	str = stemp.c_str();
 	GetDlgItem(IDC_TOTAL)->SetWindowText(str);
+	stemp = StoWs(n);
+	str = stemp.c_str();
+	GetDlgItem(IDC_TYPE)->SetWindowText(str);
 	mysql_close(&local_mysql);
 }
